@@ -6,26 +6,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XXXX</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ==" crossorigin="anonymous" />
-    <script src="request.js"></script>
+    <script src="request2.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .bigContainer{ 
+            
+
+        }
+        #search{
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            gap: 1rem;
+            z-index: -1;
+        }
+        #gif{
+            height: 15rem;           
+            grid-column: 5/6;
+            z-index: 1;
+        }
+        #divNot{
+            
+            text-align: center;
+        }
+        #xcontainer{
+          display: grid;
+          grid-template-columns: repeat(9, 1fr);
+        }
+        #container{
+            text-align: center;
+            grid-column: 2/5;
+        }
+        #container2{
+            text-align: center;
+            grid-column: 6/9;
+        }
+
+        #whatsNew{
+            grid-column: 5/6;
+
+        }
+        label{
+            grid-column: 4/5;
+            
+        }
+        
+    </style>
+    
 
 </head>
 <body>
+    <div class="bigContainer">
+        <form action="" id="search">
+            <label for="input"> <h5>Newsmaid Search</h5></label>
+            <input type="text" name="" id="input" onkeyup="peticionBuscador()" >
+            <input type="submit" value="Search" id="submit">
 
-    <form action="" id="search">
-        <label for="input"> <h5>Newsmaid Search</h5></label>
-        <input type="text" name="" id="input" >
-        <input type="submit" value="Search" id="submit">
-    </form>
-    <img id= "gif" src="loading.gif" alt="loading.." style="visibility:hidden;">
+            <!-- <input type="submit" value="Search" id="submit" onclick="createNewNew()"> -->
+            <button id='whatsNew' onclick="listenForDoc()">What`s New?</button>
+            <img id= "gif" src="loading.gif" alt="loading.." style="visibility:hidden;">
+        </form>
 
-    <div id="container">
-        <ul class="class-list"></ul>
+        <div id="xcontainer">
 
+            <div id="container">
+                <h4>Here are some of today`s news:</h4>
+                <ul class="class-list"></ul>
+
+        
+            </div>
+            <div id="container2">
+                <h4>Type somethin on the searchbar to load related News</h4>
+                <ul class="class-list"></ul>
+        
+            </div>
+
+        </div>
     </div>
+
+<!-- Esta ventana solo se abrirá con el botón Mas info -->
+    <div id="maestro"></div>
+
+    <div id="modalDetalle" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 ">
+    <div class="w3-container w3-teal">
+        <span onclick="document.getElementById('modalDetalle').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <p class="Autor"></p>
+        <p class="contenido"></p>
+        <p class="descripcion"></p>
+        <p class="publicado"></p>
+        <a href="" class="url" target="_blank"></a>
+    </div>
+    </div>
+    </div>
+    </div>
+        
     
-
-
-
+    
+    <script src="request.js"></script>
 </body>
 
 </html> 
